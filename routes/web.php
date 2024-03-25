@@ -4,7 +4,7 @@ use App\Http\Controllers\DespesaController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('Home');
 Route::get('/Despesas/', [DespesaController::class, 'index'])->name('Despesa.listar');
 Route::get('/Despesa/create', [DespesaController::class, 'create'])->name('Despesa.create');
 Route::post('/Despesa/store', [DespesaController::class, 'store'])->name('Despesa.store');

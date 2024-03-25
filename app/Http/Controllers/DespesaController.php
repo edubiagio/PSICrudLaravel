@@ -94,6 +94,15 @@ class DespesaController extends Controller
      */
     public function update(Request $request)
     {
+        
+        //dd($request->all());
+        $input = $request->validate([
+            'co_unidade_demandante' => 'required|string',
+            'vr_total' => 'required',
+            'dt_pagamento' => 'required'
+        ]);
+
+
         Despesa::findOrFail($request->id)->update($request->all());
         return redirect('/Despesas/');
 
